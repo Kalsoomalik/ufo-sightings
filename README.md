@@ -1,3 +1,8 @@
+
+Direct Link to HTML Code: https://github.com/Kalsoomalik/ufo-sightings/blob/master/ufo-sightings/index.html
+Direct Link to javaScript Code: https://github.com/Kalsoomalik/ufo-sightings/blob/master/ufo-sightings/static/js/app.js
+
+
 # Unit 14 | Assignment - JavaScript and DOM Manipulation
 
 ## Background
@@ -10,7 +15,7 @@ That's why we are hiring you. We need you to write code that will create a table
 
 You can handle this... right? The planet Earth needs to know what we have found!
 
-## Your Task
+## Task
 
 ### Level 1: Automatic Table and Date Search
 
@@ -49,10 +54,6 @@ Your final product will be assessed on the following metrics:
 * Visual attraction
 
 * Usability
-
-**Good luck!**
-
-- - -
 
 ### Copyright
 
