@@ -1,6 +1,5 @@
 
-Direct Link to HTML Code: https://github.com/Kalsoomalik/ufo-sightings/blob/master/ufo-sightings/index.html
-
+Direct Link to HTML Code: https://github.com/Kalsoomalik/ufo-sightings/blob/master/ufo-sightings/index.html\
 Direct Link to javaScript Code: https://github.com/Kalsoomalik/ufo-sightings/blob/master/ufo-sightings/static/js/app.js
 
 
