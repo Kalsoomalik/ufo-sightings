@@ -2,11 +2,11 @@ var dataList = data;
 
 var tbody = d3.select("tbody");
 var filterButton = d3.select("#filter-btn");
+var clearButton = d3.select("#clear-btn");
 
 
 // Initial display
 displayData(dataList);
-
 
 // Function to display data in table
 function displayData(dataList) {
@@ -24,9 +24,12 @@ function displayData(dataList) {
 filterButton.on("click", function () {
     d3.event.preventDefault();
     var filteredDataList = dataList;
+    var datetimeValue = d3.select("#datetimeId").property("value");
+    var outputFormat = d3.timeFormat("%-m/%-d/%Y");
+    var parseDate = d3.timeParse("%Y-%m-%d");
 
-    var datetimeValue = d3.select("#datetime").property("value");
     if (datetimeValue !== undefined && datetimeValue.trim() !== '') {
+        datetimeValue = outputFormat(parseDate(datetimeValue));
         filteredDataList = filteredDataList.filter(data => data.datetime === datetimeValue);
     }
 
@@ -36,20 +39,36 @@ filterButton.on("click", function () {
     }
 
     var stateValue = d3.select("#stateId").property("value");
-    console.log("stateValue: [" + stateValue + "]");
-    if (stateValue !== undefined && stateValue.trim() !== '') {
+    if (stateValue !== undefined && stateValue.trim() !== '---') {
         filteredDataList = filteredDataList.filter(data => data.state === stateValue);
     }
 
     var countryValue = d3.select("#country").property("value");
-    if (countryValue !== undefined && countryValue.trim() !== '') {
+    if (countryValue !== undefined && countryValue.trim() !== '---') {
         filteredDataList = filteredDataList.filter(data => data.country === countryValue);
     }
 
     var shapeValue = d3.select("#shape").property("value");
-    if (shapeValue !== undefined && shapeValue.trim() !== '') {
+    if (shapeValue !== undefined && shapeValue.trim() !== '---') {
         filteredDataList = filteredDataList.filter(data => data.shape === shapeValue);
     }
 
     displayData(filteredDataList);
+});
+
+
+// Event handlers for clear button
+clearButton.on("click", function () {
+
+    // Setting initial value based on available data
+    // This would not filter data until filter button is pressed
+    d3.select("#datetimeId").property("value", "2010-01-01");
+    d3.select("#city").property("value", "");
+    d3.select("#stateId").property("value", "---");
+    d3.select("#country").property("value", "---");
+    d3.select("#shape").property("value", "---");
+
+    // display full data without filter
+    displayData(dataList);
+
 });
